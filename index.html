@@ -1,13 +1,121 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Лабораторная работа №14</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="controls">
+            <button id="download-pdf">Скачать PDF</button>
+        </div>
+
+        <main class="resume-container" id="resume">
+            <header class="resume-header">
+                <div class="profile-card">
+                  <div class="photo-placeholder">
+                      <span>Вставьте ваше фото</span>
+                  </div>
+                  
+                  <div class="profile-text-content">
+                      <p contenteditable="true" class="hello-text">Привет я</p>
+                      <h1 contenteditable="true" class="user-name">Ваше ФИО</h1>
+                      <p contenteditable="true" class="job-title">О вас (например, UX/UI Designer)</p>
+                  </div>
+              </div>
+
+                <div class="languages-card">
+                    <h2 contenteditable="true">Языки</h2>
+                    
+                    <div class="lang-item">
+                        <span contenteditable="true">Английский</span>
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="80" class="lang-slider">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lang-item">
+                        <span contenteditable="true">Русский</span>
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="95" class="lang-slider">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="main-content">
+                <div class="row">
+                    <div class="left-column">
+                        <section class="experience">
+                            <h2 contenteditable="true">Опыт работы</h2>
+                            <div class="card green-card">
+                                <span class="date" contenteditable="true">ММ.ГГГГ — Наст. время</span>
+                                <h3 contenteditable="true">Ваша должность</h3>
+                                <p contenteditable="true">Опишите ваши обязанности и достижения на этом месте работы</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="right-column">
+                        <section class="tools">
+                          <h2 contenteditable="true">Инструменты</h2>
+                          <div class="card tools-card">
+                              <div class="tool-group">
+                                  <span class="tool-category">Design</span>
+                                  <div class="tool-text-container">
+                                      <p class="editable-placeholder" contenteditable="true">Используемые вами инструменты</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </section>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="left-column">
+                        <section class="education">
+                            <h2 contenteditable="true">Образование</h2>
+                            <div class="education-grid">
+                                <div class="card green-card education-item">
+                                    <span class="date" contenteditable="true">Период обучения</span>
+                                    <h3 contenteditable="true">Специальность</h3>
+                                    <p contenteditable="true" class="source">Универитет</p>
+                                </div>
+                                <div class="card education-item">
+                                    <span class="date" contenteditable="true">Период обучения</span>
+                                    <h3 contenteditable="true">Специальность</h3>
+                                    <p contenteditable="true" class="source">Универитет</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="right-column">
+                        <section class="interests">
+                            <h2 contenteditable="true">Интересы</h2>
+                            <div class="interests-container">
+                                <p class="tag-list" contenteditable="true">Ваши интересы</p>
+                            </div>
+                        </section>
+
+                        <footer class="contact-card">
+                            <p class="contact-email" contenteditable="true">Ваша электронная почта</p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script type="module" src="./js/main.js"></script>
-  </body>
+</body>
 </html>
