@@ -7,9 +7,9 @@
 }
 
 .profile-card {
-    display: flex; /* Выстраивает фото и текст в ряд */
-    align-items: center; /* Центрирует по вертикали */
-    gap: 25px; /* Расстояние между фото и текстом */
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
     background-color: #f8f9fa;
     border-radius: 20px;
     padding: 24px;
@@ -17,11 +17,10 @@
 
 .profile-text-content {
     display: flex;
-    flex-direction: column; /* Выстраивает строки текста друг под другом */
-    gap: 5px; /* Расстояние между строками текста */
+    flex-direction: column; 
+    gap: 5px; 
 }
 
-/* Сбрасываем лишние отступы у заголовков, чтобы не «разлетались» */
 .hello-text, .user-name, .job-title {
     margin: 0;
     padding: 0;
@@ -38,9 +37,9 @@
 }
 
 .photo-placeholder {
-    width: 150px; /* Фиксированный размер, чтобы не прыгало */
+    width: 150px; 
     height: 150px;
-    flex-shrink: 0; /* Чтобы фото не сжималось */
+    flex-shrink: 0; 
     background-color: #e0e6ed;
     border: 2px dashed #bdc3c7;
     border-radius: 20px;
@@ -51,7 +50,6 @@
     color: #7f8c8d;
 }
 
-/* 1. Общие настройки и база */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f3f4f6;
@@ -70,9 +68,6 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* 2. Сетки (Layout) */
-
-/* Первая строка (Шапка) */
 .resume-header {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -80,21 +75,18 @@ body {
     margin-bottom: 25px;
 }
 
-/* Контейнер для строк 2 и 3 */
 .main-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Сетка для рядов внутри контента */
 .row {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 20px;
 }
 
-/* Сетка для плиток внутри Образования */
 .education-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -102,7 +94,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* 3. Карточки и общие стили блоков */
 .profile-card, .languages-card, .card, .contact-card {
     background-color: #f8f9fa;
     border-radius: 20px;
@@ -121,7 +112,6 @@ body {
     margin-top: 20px;
 }
 
-/* 4. Образование (Карточки-плитки) */
 .education-item {
     padding: 15px !important;
     display: flex;
@@ -151,7 +141,6 @@ body {
     font-weight: 500;
 }
 
-/* 5. Инструменты */
 .tools-card {
     display: flex;
     flex-direction: column;
@@ -182,7 +171,6 @@ body {
     font-size: 24px;
 }
 
-/* 6. Редактируемые поля и Подсказки (Placeholders) */
 [contenteditable="true"] {
     transition: all 0.2s ease-in-out;
     min-width: 20px;
@@ -213,7 +201,6 @@ body {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* 7. Языки и ползунки */
 .lang-item { margin-bottom: 20px; }
 
 .slider-wrapper {
@@ -249,7 +236,6 @@ body {
     z-index: 2;
 }
 
-/* 8. Фото и Интересы */
 .photo-placeholder {
     width: 120px;
     height: 120px;
@@ -276,7 +262,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Кнопка */
 .controls {
     position: fixed;
     top: 20px;
@@ -296,29 +281,26 @@ body {
 
 
 @media print {
-    /* Принудительно ограничиваем высоту под формат A4 */
     #resume {
         width: 210mm !important;
-        height: 296mm !important; /* Чуть меньше стандартных 297, чтобы не вылез пустой лист */
+        height: 296mm !important; 
         margin: 0 !important;
-        padding: 10mm !important; /* Внутренние отступы самого резюме */
+        padding: 10mm !important;
         box-sizing: border-box !important;
-        overflow: hidden !important; /* Запрещаем вылезать за границы */
+        overflow: hidden !important; 
     }
 
     .resume-container {
-        transform: scale(0.98); /* Легкое масштабирование, если контента слишком много */
+        transform: scale(0.98);
         transform-origin: top center;
     }
 
-    /* Убираем кнопку скачивания из самого PDF */
     .controls {
         display: none !important;
     }
 }
 
 @media print {
-    /* Сбрасываем обертку */
     body {
         padding: 0;
         margin: 0;
@@ -331,7 +313,7 @@ body {
     }
 
     .resume-container {
-        width: 100% !important; /* Важно: контейнер должен стать резиновым */
+        width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
         padding: 10mm !important;
@@ -341,7 +323,6 @@ body {
         transform: none !important;
     }
 
-    /* Убеждаемся, что сетка не шире листа */
     .resume-header, .row {
         display: grid !important;
         grid-template-columns: 1.2fr 0.8fr !important;
@@ -349,12 +330,10 @@ body {
         gap: 20px !important;
     }
 
-    /* Скрываем кнопку */
     .controls {
         display: none !important;
     }
 
-    /* Фикс для цветов в PDF */
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
@@ -362,7 +341,6 @@ body {
     }
 }
 
-/* --- 1. ОБЩИЕ СТИЛИ (ЭКРАН) --- */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f3f4f6;
@@ -384,7 +362,6 @@ body {
     gap: 20px;
 }
 
-/* Сетки */
 .resume-header, .row {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -397,7 +374,6 @@ body {
     gap: 15px;
 }
 
-/* Профиль */
 .profile-card {
     display: flex;
     align-items: center;
@@ -431,27 +407,21 @@ body {
     font-size: 14px;
 }
 
-/* Карточки */
 .card { background-color: #f8f9fa; border-radius: 20px; padding: 24px; }
 .green-card { background-color: #2ecc71; color: white; }
 .contact-card { background: #000; color: white; padding: 24px; border-radius: 20px; margin-top: 10px; }
 
-/* Опыт (FIX: Чтобы текст был справа) */
 .experience .card { display: flex; flex-direction: column; gap: 10px; }
 
-/* Инструменты */
 .tool-group { background: white; border-radius: 12px; padding: 15px; text-align: center; }
 .tool-category { background: #000; color: white; font-size: 10px; padding: 2px 8px; border-radius: 10px; }
 
-/* Языки */
 .slider-wrapper { position: relative; width: 100%; height: 10px; background: #e0e6ed; border-radius: 5px; margin-top: 10px; }
 .progress { height: 100%; background: #2ecc71; border-radius: 5px; }
 
-/* Кнопка */
 .controls { position: fixed; top: 20px; left: 20px; z-index: 100; }
 #download-pdf { padding: 10px 20px; background: #2ecc71; color: white; border: none; border-radius: 8px; cursor: pointer; }
 
-/* --- 2. ФИНАЛЬНЫЙ БЛОК ДЛЯ ПЕЧАТИ (БЕЗ ОБРЕЗОК) --- */
 @media print {
     body {
         display: block !important;
@@ -460,7 +430,7 @@ body {
     }
 
     .resume-container {
-        width: 210mm !important; /* Ширина A4 */
+        width: 210mm !important;
         max-width: 210mm !important;
         margin: 0 !important;
         padding: 10mm !important;
@@ -474,7 +444,6 @@ body {
         display: none !important;
     }
 
-    /* Заставляем браузер печатать цвета и фоны */
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
